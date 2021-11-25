@@ -31,3 +31,23 @@ for (i = 0; i < arrayMovies.length; i++) {
 </div>`
 };
 })
+
+
+let mySearch = 'harry'
+
+function getMovie(){
+    fetch(`https://imdb-internet-movie-database-unofficial.p.rapidapi.com/search/${mySearch}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
+		"x-rapidapi-key": "64393cabd3mshde0c1b9ddd453b9p1c94abjsn2cbaa333220e"
+	}
+})
+.then(response => response.json())
+.then(data => {console.log(data)})
+.catch(err => {
+	console.error(err);
+});
+}
+
+getMovie()
